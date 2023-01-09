@@ -116,8 +116,22 @@ nestedArray();
 
 // Put your answer below -------------------------
 
+function onlyOne(array) {
+    var noDuplicates = [];
 
+    for (let i = 0; i < array.length; i++){
 
+     if (noDuplicates.indexOf(array[i]) === -1) {
+        noDuplicates.push(array[i]);
+     }   
+    }
+    return noDuplicates;
+
+};
+
+var num = [1,2,3,4,5,4,3];
+var oneNum = onlyOne(num);
+console.log(oneNum);
 
 
 
