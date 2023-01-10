@@ -74,4 +74,10 @@ function getAverage (marks) {
 // THE SOUL OF WIT: REVERSE AN ARRAY
 // https://www.codewars.com/kata/59b81886460387d8fc000043
 
-reverse=a=>[...a].map(a.pop,a)
+reverse=a=>[...a].map(a.pop,a) 
+
+//use spread operator to expand array into elements
+
+//.map creates new array allowing it to be populated by (calling a function)
+
+//a.pop adds last value first, 
