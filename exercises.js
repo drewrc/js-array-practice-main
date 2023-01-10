@@ -84,7 +84,7 @@ filterFalsy();
 
 // Put your answer below -------------------------
 
-function nestedArray() {
+function nestedArray(array) {
 
 
     const myArray = new Map([['name', 'Charlie'], ['color', 'brown'], ['age', 10]
@@ -116,22 +116,29 @@ nestedArray();
 
 // Put your answer below -------------------------
 
+
+//define the function: ... 
 function onlyOne(array) {
-    var noDuplicates = [];
+    var noDuplicates = [];          //variable declaration and assignment
+
+// for loop to tell the function to run through the array
 
     for (let i = 0; i < array.length; i++){
 
-     if (noDuplicates.indexOf(array[i]) === -1) {
-        noDuplicates.push(array[i]);
+
+//if statement using .indexOf -> "method returns the first index at which a given element can be found in the array" - MDN
+     if (noDuplicates.indexOf(array[i]) === -1) { //.indexOf
+        noDuplicates.push(array[i]);            //.push adds new elements
      }   
     }
-    return noDuplicates;
+    return noDuplicates;                        //execute function
 
 };
 
-var num = [1,2,3,4,5,4,3];
-var oneNum = onlyOne(num);
-console.log(oneNum);
+//use to check solution:
+//var num = [1,2,3,4,5,4,3];
+//var oneNum = onlyOne(num);
+//console.log(oneNum);
 
 
 
@@ -152,7 +159,30 @@ console.log(oneNum);
 // Put your answer below -------------------------
 
 
+function identicalIsTrue(arr1, arr2) {
 
+    let N = arr1.length;
+    let M = arr2.length;
+
+    //compare array length by:
+    if (N != M) 
+    return false; 
+
+    //sort to compare values
+
+    arr1.sort();        
+    arr2.sort();
+
+    //loop to run through the array 
+
+    for (let i = 0; i < N; i++)
+    //if arr1 != arr2, return false
+    if (arr1[i] != arr2[i])
+        return false;
+    //otherwise return true
+        return true;
+
+};
 
 
 
