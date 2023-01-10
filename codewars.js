@@ -41,9 +41,18 @@ function arr(n) { //declare function
 // Drone Fly-By
 // https://www.codewars.com/kata/58356a94f8358058f30004b5/train/javascript
 
-//?
+function flyBy(lamps, drone){
+    lamps = ['o' || 'x'];
+    drone = ['T']
+    lengthFlight = lengthDrone;
+      if (i < lengthFlight.length) {
+        result = "o";
+      } else {
+        result = "x";
+      } return result;
+    };
 
-
+//tbh v confused by this one ? not sure what kata wants flyBy function for
 
 
 // # 4
