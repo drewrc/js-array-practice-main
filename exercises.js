@@ -5,14 +5,17 @@
 
 // Put your answer below -------------------------
 
-function myFunction(sunshine, i) {
-    const str = "sunshine";
-    for (let i = 0; i )
-}
+function myFunction(str, i) { //declare function 
+    const myArr  = []; //start w empty array/define/assign variable
 
+    for (let j = 0; j < i; i++ ) { //for loop to run through array 
+    myArr.push(str);
+    //.push(sunshine would return * the value of i )
+    }
+    return myArr; //return value of myFunction when called 
+};
 
-
-
+myFunction(); //call function
 
 
 
@@ -27,29 +30,22 @@ function myFunction(sunshine, i) {
 // Put your answer below -------------------------
 
 
-const arr = [1,2,3,4];
+//const arr = [1,2,3,4];
 
-function reverseFunction(arr) {
+function reverseFunction(arr) { //create function expression
    
-    var newArr = [];
-    for (var i = arr.length - 1; i = 0; i--){ // index should begin on last number in arr, function runs until 0, last part of loop says function -1 every time it runs 
-        newArr.push(arr[i]);                    //newArray will add 1st value of arr to end
+    var newArr = []; //declare/assign variable value 
+    for (let i = 0; i < arr.length; i++){ // index begins on first number, ends when i is no longer less than arr.length
+        newArr.unshift(arr[i]);                    //.unshift method adds one or more elements to the beginning of an array and returns the new length of the array - MDN
     };
 
-return newArr;
+return newArr;  //return value of new array when function is called 
 };
 
-reverseFunction();
+reverseFunction(); //call function
 
-
-
-
-
-
-// dot reverse method and spread method
-
-
-
+//could return [...arr].reverse(); -> creates copy and mutates the copy instead of the original
+// const reverseArray = (arr) => [...arr].reverse(); ->  ie. with fat arrow function
 
 // -----------------------------------------------
 
@@ -61,17 +57,36 @@ reverseFunction();
 
 //falsy values: false, null, 0, undefined, NaN, " "
 
-function filterFalsy() {
+function filterFalsy() { //declare function expression
 
-var arr = [1, 2, null, NaN]
+//var arr = [1, 2, null, NaN] //for testing
 
-const falsy = arr.filter(Boolean);
+const falsy             //define variable 
+ = arr.filter(Boolean); //use .filter(Boolean) to determine true/false
 
-console.log(falsy);
+//console.log(falsy); //testing
 
 };
 
-filterFalsy();
+filterFalsy();      //call function
+
+
+//ex. of for loop solution 
+
+
+//function removeFalsyValues(arr) {
+//    const result = [];
+
+
+//    for (let i=0; i < arr.length; i++) {
+//        if (!!arr[i]) {                          //could add === true here to be double sure
+//            result.push(arr[i]);
+//        }
+
+
+//    }
+//    return result;
+// };
 
 
 // -----------------------------------------------
@@ -84,25 +99,28 @@ filterFalsy();
 
 // Put your answer below -------------------------
 
-function nestedArray(array) {
+////////////refactored: /***revist later to review***//////////////////////////
 
+const myArray = [   //list array
+    ['name', 'Charlie'],
+    ['color', 'brown'],
+    ['age', '10']
+];
 
-    const myArray = new Map([['name', 'Charlie'], ['color', 'brown'], ['age', 10]
-    ]);
+function createObj (arr) { //create function
+const result = {}; //assign and define variable 
 
-    for (let i = 0; i < myArray.length; i++){
-         
-        const obj = Object.fromEntries(myArray);
+    for (let i = 0; i <arr.length; i++) { //for loop
+        result[arr[i][0]] = arr[i][1];
     }
 
+// could also use for...of
+//for (const index of arr) {
+//    result [index[0]] = index [1];
+//}
+
+return result;
 };
-
-nestedArray();
-
-
-
-
-
 
 
 
@@ -118,7 +136,7 @@ nestedArray();
 
 
 //define the function: ... 
-function onlyOne(array) {
+function onlyOne(array) { //declare function expression
     var noDuplicates = [];          //variable declaration and assignment
 
 // for loop to tell the function to run through the array
@@ -127,13 +145,19 @@ function onlyOne(array) {
 
 
 //if statement using .indexOf -> "method returns the first index at which a given element can be found in the array" - MDN
-     if (noDuplicates.indexOf(array[i]) === -1) { //.indexOf
-        noDuplicates.push(array[i]);            //.push adds new elements
+     if (noDuplicates.indexOf(array[i]) === -1) { //.indexOf allows us to push -1 if array[i] doesn't exist 
+        noDuplicates.push(array[i]);            //.push adds new elements to result array
      }   
     }
     return noDuplicates;                        //execute function
 
 };
+
+//can also use spread operator??
+//can use {} to destructure an object 
+// .includes vs .indexOf
+
+
 
 //use to check solution:
 //var num = [1,2,3,4,5,4,3];
@@ -141,9 +165,10 @@ function onlyOne(array) {
 //console.log(oneNum);
 
 
-
-
-
+// function removeDuplicates(arr) {
+//    return [...new Set (arr)]; //...new creates new set / set is an API **see notes 
+// };
+// use .values when working with sets
 
 
 // -----------------------------------------------
@@ -159,6 +184,8 @@ function onlyOne(array) {
 // Put your answer below -------------------------
 
 
+
+//create function expression
 function identicalIsTrue(arr1, arr2) {
 
     let N = arr1.length;
@@ -168,17 +195,27 @@ function identicalIsTrue(arr1, arr2) {
     if (N != M) 
     return false; 
 
-    //sort to compare values
+    //sort to compare values in order
 
     arr1.sort();        
     arr2.sort();
 
+    //can also use .sort(compareFn(a, b)) //where a and b are 2 parameters
+    //function compareNumbers (a, b){
+    //    return a - b;
+    //}
+    // to use: anArray.sort(compareNumbers); alphabetical order/numeric order for (a, b)
+
     //loop to run through the array 
 
-    for (let i = 0; i < N; i++)
-    //if arr1 != arr2, return false
-    if (arr1[i] != arr2[i])
+    for (let i = 0; i < N; i++){
+
+
+    //if arr1 value != arr2 value at same index in array, return false
+    if (arr1[i] != arr2[i]){
         return false;
+    }
+}
     //otherwise return true
         return true;
 
@@ -186,7 +223,11 @@ function identicalIsTrue(arr1, arr2) {
 
 
 
-
+//function compareArrays(arr1, arr2) {
+//   if(arr1.length !== arr2.length){
+//       return false;
+//   }
+//};
 
 
 
