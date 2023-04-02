@@ -81,3 +81,8 @@ reverse=a=>[...a].map(a.pop,a)
 //.map creates new array allowing it to be populated by (calling a function)
 
 //a.pop adds last value first, 
+
+
+
+
+///
