@@ -6,5 +6,5 @@ Here is an assignment I completed for Carolina Code School while I was learning 
 Happy Coding! 
 
 - Drew
-https://www.linkedin.com/in/drew-coker/
-https://drewcoker.herokuapp.com/ 
+- Contact: https://www.linkedin.com/in/drew-coker/
+- Website: https://drewcoker.herokuapp.com/ 
